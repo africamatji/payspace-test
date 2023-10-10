@@ -1,37 +1,37 @@
 //Main js, application main file
 
 import Books from "./books.js";
-import { View } from "./utility/View.js"; //utility class to abstract the view rendering functionality
 
 const booksObj = new Books();
 const bookList = booksObj.bookList;
-View.render(bookList);
+booksObj.renderView(bookList);
 
 //Search event
 document.getElementById('search-txt').addEventListener('keyup', (event) => {
-    booksObj.searchByTitleAuthor(event.target.value);
+    const data = booksObj.searchByTitleAuthor(event.target.value);
+    booksObj.renderView(data);
 });
 
 // Title ascending
 document.getElementById('sort-title-asc').addEventListener('click', (event) => {
     const data = bookList.slice().sort(booksObj.sortByTitles);
-    View.render(data);
+    booksObj.renderView(data);
 });
 
 // Title descending
 document.getElementById('sort-title-desc').addEventListener('click', (event) => {
     const data = bookList.slice().sort((a, b) => booksObj.sortByTitles(b, a));
-    View.render(data);
+    booksObj.renderView(data);
 });
 
 // Author ascending
 document.getElementById('sort-author-asc').addEventListener('click', (event) => {
     const data = bookList.slice().sort(booksObj.sortByAuthors);
-    View.render(data);
+    booksObj.renderView(data);
 });
 
 // Author descending
 document.getElementById('sort-author-desc').addEventListener('click', (event) => {
     const data = bookList.slice().sort((a, b) => booksObj.sortByAuthors(b, a));
-    View.render(data);
+    booksObj.renderView(data);
 });

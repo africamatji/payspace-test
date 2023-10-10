@@ -19,7 +19,7 @@ class Books {
             return titleMatch || authorMatch;
         });
 
-        View.render(filteredData);
+        return filteredData;
     }
 
     sortByTitles(a, b) {
@@ -38,6 +38,10 @@ class Books {
         if (authorA < authorB) return -1;
         if (authorA > authorB) return 1;
         return 0;
+    }
+
+    renderView(data) {
+        View.render(data);
     }
 }
 
