@@ -1,9 +1,9 @@
 //Main js, application main file
-
 import Books from "./books.js";
 
 const booksObj = new Books();
 const bookList = booksObj.bookList;
+
 booksObj.renderView(bookList);
 
 //Search event
