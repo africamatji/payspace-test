@@ -4,7 +4,7 @@ import Books from "./books.js";
 const booksObj = new Books();
 const bookList = booksObj.bookList;
 
-booksObj.renderView(bookList);
+booksObj.renderView(bookList); //render view with default list
 
 //Search event
 document.getElementById('search-txt').addEventListener('keyup', (event) => {
