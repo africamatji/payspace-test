@@ -1,6 +1,7 @@
 //Main js, application entry file
+
 import Books from "./books.js";
-import { View } from "./utility/View.js";
+import { View } from "./utility/View.js"; //utility class to abstract the view rendering functionality
 
 const booksObj = new Books();
 View.render(booksObj.bookList);

@@ -1,6 +1,6 @@
 // Books.js Class
 import { Books as booksList } from './data/Books.js';
-import { View } from "./utility/View.js"; //utility class to abstract the view rendering functionality
+import { View } from "./utility/View.js";
 
 class Books {
 
