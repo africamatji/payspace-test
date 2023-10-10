@@ -17,7 +17,7 @@
                         <a class="nav-link" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Palindromic</a>
+                        <a class="nav-link" href="palindromic.html">Palindromic</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="vue.html">Vue Implementation</a>
@@ -39,9 +39,12 @@
             <div class="card bg-dark mt-4">
                 <div class="card-body">
                     <div class="card-row" id="list-container">
-                        <div class="card-item" v-for="(book, index) in currentPageBooks" :key="index">
+                        <div v-if="books.length > 0" class="card-item" v-for="(book, index) in currentPageBooks" :key="index">
                             <p class="text-light" style="font-weight: bold; font-style: italic">Author: {{ book.author }}</p>
                             <p class="text-light">Title: {{ book.title }}</p>
+                        </div>
+                        <div v-if="books.length === 0">
+                            <p class="text-light">No Books</p>
                         </div>
                     </div>
                 </div>
