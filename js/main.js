@@ -1,4 +1,4 @@
-//Main js, application entry file
+//Main js, application main file
 
 import Books from "./books.js";
 import { View } from "./utility/View.js"; //utility class to abstract the view rendering functionality
