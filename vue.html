@@ -39,12 +39,18 @@
             <div class="card bg-dark mt-4">
                 <div class="card-body">
                     <div class="card-row" id="list-container">
-                        <div class="card-item" v-for="(book, index) in books" :key="index">
+                        <div class="card-item" v-for="(book, index) in currentPageBooks" :key="index">
                             <p class="text-light" style="font-weight: bold; font-style: italic">Author: {{ book.author }}</p>
                             <p class="text-light">Title: {{ book.title }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="mt-4">
+                <p class="text-light">Pagination</p>
+                <!-- Pagination controls -->
+                <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
+                <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
             </div>
         </section>
     </main>
